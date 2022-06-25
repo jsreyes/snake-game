@@ -1,3 +1,5 @@
+import BootLoader from "./bootloader.js";
+import Play from "./scenes/play.js";
 
 const config = {
   title: 'Snake',
@@ -7,6 +9,7 @@ const config = {
   parent: 'container',
   backgroundColor: '#f9ca24',
   pixelArt: true,
+  scene: [BootLoader, Play],
 };
 
 new Phaser.Game(config);
