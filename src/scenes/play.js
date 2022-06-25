@@ -8,9 +8,30 @@ class Play extends Phaser.Scene {
   // Carga todos los assets
   preload() {
     console.log('Escena play');
-    // this.add.image(10, 10, 'cuerpo');
 
     this.snake = new Snake(this);
+  }
+
+  create() {
+    this.input.keyboard.on('keydown-RIGHT', () => {
+      this.snake.changeMov('derecha');
+    })
+
+    this.input.keyboard.on('keydown-LEFT', () => {
+      this.snake.changeMov('izquierda');
+    })
+
+    this.input.keyboard.on('keydown-UP', () => {
+      this.snake.changeMov('arriba');
+    })
+
+    this.input.keyboard.on('keydown-DOWN', () => {
+      this.snake.changeMov('abajo');
+    })
+  }
+
+  update(time) {
+    this.snake.update(time);
   }
 
 }
