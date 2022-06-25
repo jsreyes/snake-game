@@ -1,3 +1,5 @@
+import Snake from "../gameobjects/Snake.js";
+
 class Play extends Phaser.Scene {
   constructor() {
     super('Play');
@@ -6,6 +8,9 @@ class Play extends Phaser.Scene {
   // Carga todos los assets
   preload() {
     console.log('Escena play');
+    // this.add.image(10, 10, 'cuerpo');
+
+    this.snake = new Snake(this);
   }
 
 }
