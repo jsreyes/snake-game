@@ -5,7 +5,7 @@ class GameOver extends Phaser.Scene {
 
   // Carga todos los assets
   preload() {
-    console.log('Hola Soy preload');
+    console.log('Hola Soy Gameover');
   }
 
 }
