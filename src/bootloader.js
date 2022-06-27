@@ -21,7 +21,8 @@ class BootLoader extends Phaser.Scene {
       this.cache.bitmapFont.add('pixel', Phaser.GameObjects.RetroFont.Parse(this, fontJson));
       console.log(fontJson);
 
-      this.scene.start('Play');
+      this.scene.start('Menu');
+
     })
 
   }
