@@ -15,6 +15,9 @@ class Play extends Phaser.Scene {
   }
 
   create() {
+    this.scene.launch('UI');
+    const sceneUI = this.scene.get('UI');
+
     this.input.keyboard.on('keydown-RIGHT', () => {
       this.snake.changeMov('derecha');
     })
@@ -32,16 +35,17 @@ class Play extends Phaser.Scene {
     })
 
     // Collision cabeza con comida
-    this.physics.add.collider(this.snake.cuerpo[0], this.food.food, () => this.snakeEat());
+    this.physics.add.collider(this.snake.cuerpo[0], this.food.food, () => this.snakeEat(sceneUI));
   }
 
   update(time) {
     this.snake.update(time);
   }
 
-  snakeEat() {
+  snakeEat(sceneUI) {
     this.food.createFood();
     this.snake.feed();
+    sceneUI.addPoint();
   }
 
 }
